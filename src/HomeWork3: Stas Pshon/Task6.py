@@ -7,6 +7,7 @@
 
 lst = input("Введите числа через пробел: ").split()
 for i in (range(len(lst))):
-    if lst[i] == '0':
-        lst.append(lst.pop(i))  # Все нули передвигаем в конец
-print(lst)
+    if lst[i] == "0":
+        lst.remove("0")
+        lst.append("0")  # Все нули передвигаем в конец
+print(*lst)
