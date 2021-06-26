@@ -5,8 +5,11 @@
 
 str_ = input('Введите список через пробел: ')
 lst = str_.split()  # Переводим строку в список
-lst_new = []
-for i in lst:
-    if i not in lst_new:
-        lst_new.append(i)
-print(lst_new)
+if len(lst) == len(set(lst)):
+    print("Данный список итак уникален!")
+else:
+    lst_new = []
+    for i in lst:
+        if i not in lst_new:
+            lst_new.append(i)
+    print(lst_new)
