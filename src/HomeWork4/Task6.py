@@ -5,8 +5,8 @@
 
 str_ = input("Введите строку: ")
 # Убираем все знаки препинания на пробелы
-str_ = str_.replace(",", " ").replace(".", " ").replace("?", " ").replace("!", " ")
-str_ = str_.replace(":", " ").replace(";", " ").replace("...", " ")
+str_ = str_.replace(",", " ").replace(".", " ").replace("?", " ")
+str_ = str_.replace(":", " ").replace(";", " ").replace("!", " ")
 # Убираем все двойные пробелы, для корректности split
 pp = "  "
 while pp in str_:
