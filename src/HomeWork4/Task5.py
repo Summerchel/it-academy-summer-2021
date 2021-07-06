@@ -14,10 +14,10 @@ for i in range(1, n + 1):
         cur_lang.add(lang)
     all_lang = all_lang.intersection(cur_lang) if all_lang else cur_lang
     cur_lang = set()
-l_all, l_any = list(all_lang), list(any_lang)
-print("Всего языков которые знают все:", len(l_all))
-for q in range(len(l_all)):
-    print(l_all[q])
-print("Всего языков:", len(l_any))
-for w in range(len(l_any)):
-    print(l_any[w])
+lst_all, lst_any = list(all_lang), list(any_lang)
+print("Всего языков которые знают все:", len(lst_any))
+for q in range(len(lst_all)):
+    print(lst_all[q])
+print("Всего языков:", len(lst_any))
+for w in range(len(lst_any)):
+    print(lst_any[w])

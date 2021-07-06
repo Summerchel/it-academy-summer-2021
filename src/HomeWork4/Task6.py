@@ -3,14 +3,14 @@
 числом пробелов или символами конца строки.
 Определите, сколько различных слов содержится в этом тексте."""
 
-str_ = input("Введите строку: ")
+str_input = input("Введите строку: ")
 # Убираем все знаки препинания на пробелы
-str_ = str_.replace(",", " ").replace(".", " ").replace("?", " ")
-str_ = str_.replace(":", " ").replace(";", " ").replace("!", " ")
+str_input = str_input.replace(",", " ").replace(".", " ").replace("?", " ")
+str_input = str_input.replace(":", " ").replace(";", " ").replace("!", " ")
 # Убираем все двойные пробелы, для корректности split
 pp = "  "
-while pp in str_:
-    str_ = str_.replace("  ", " ")
+while pp in str_input:
+    str_input = str_input.replace("  ", " ")
 else:
-    set_str = set(str_.split())
-    print(len(set_str))
+    set_str = set(str_input.split())
+print(len(set_str))
