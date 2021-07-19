@@ -25,4 +25,3 @@ def get_ranges(lst):
 
 
 get_ranges(input().split())
-
