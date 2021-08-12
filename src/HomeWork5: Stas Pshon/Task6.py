@@ -8,4 +8,5 @@ def nod(num, power_of_two):
     print("Максимальный делитель: ", 2 ** (power_of_two - 1))
     print("Степень двойки равна", (power_of_two - 1))
 
+
 nod(int(input("Введите число для проверки: ")), 0)
