@@ -24,4 +24,6 @@ def get_ranges(lst):
         print(str(total[0]) + "-" + str(total[-1]))
 
 
-get_ranges(input().split())
+input_list = input("Введите непустой список неповторяющихся целых чисел: ")
+split_list = input_list.split()
+get_ranges(split_list)

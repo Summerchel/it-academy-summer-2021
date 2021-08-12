@@ -1,9 +1,11 @@
 """Вводится число найти его максимальный делитель,
 являющийся степенью двойки. 10(2) 16(16), 12(4)."""
 
-num = int(input("Введите число для проверки: "))
-power_of_two = 0
-while num % 2 ** power_of_two == 0:
-    power_of_two += 1
-print("Максимальный делитель: ", 2 ** (power_of_two - 1))
-print("Степень двойки равна", (power_of_two - 1))
+
+def nod(num, power_of_two):
+    while num % 2 ** power_of_two == 0:
+        power_of_two += 1
+    print("Максимальный делитель: ", 2 ** (power_of_two - 1))
+    print("Степень двойки равна", (power_of_two - 1))
+
+nod(int(input("Введите число для проверки: ")), 0)

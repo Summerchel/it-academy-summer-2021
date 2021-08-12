@@ -17,29 +17,31 @@ try:
         lines_top250 = lines[0:250]
         lines = lines[268:]
 
-        # Гистограмма годов
-        for line in lines:
-            index = line.find("(")
-            god = line[index + 1:index + 5]
-            if god.isdecimal() == 1:
-                gist_years.append(god)
-
-        # Гистограмма рейтингов
-        for line in lines:
-            line = line[25::]
-            index = line.find(".")
-            level = line[index - 1:index + 2]
-            gist_level.append(level)
-
-        # Топ 250
-        for line in lines_top250:
-            index_start = line.find(".")
-            index_end = line.find("(")
-            top250_list.append(line[index_start + 4:index_end - 1])
-
 
 except FileNotFoundError:
     print("Данный файл не найден")
+
+
+# Гистограмма годов
+for line in lines:
+    index = line.find("(")
+    god = line[index + 1:index + 5]
+    if god.isdecimal() == 1:
+        gist_years.append(god)
+
+# Гистограмма рейтингов
+for line in lines:
+    line = line[25::]
+    index = line.find(".")
+    level = line[index - 1:index + 2]
+    gist_level.append(level)
+
+# Топ 250
+for line in lines_top250:
+    index_start = line.find(".")
+    index_end = line.find("(")
+    top250_list.append(line[index_start + 4:index_end - 1])
+
 
 with open("top250_movies.txt", "w") as top250:
     for film in top250_list:
