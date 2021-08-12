@@ -15,6 +15,7 @@ def hw2_task1(rub=15, cent=50, product=15):
     Пример:
     Input: Цена одной вещи 3 рубля 20 копеек, посчитать 3 предмета.
     Output: Общая цена 9 рублей 60 копеек"""
+
     _all = ((rub * 100) + cent) * product
     print("Всего", _all // 100, "рубля(ей)", _all % 100, "копейка(ек)")
 
@@ -27,6 +28,7 @@ def hw2_task2(str_="To live is the rarest thing in the world. "
     Подсказки:
     - my_string.split([chars]) возвращает список строк.
     - len(list) - количество элементов в списке"""
+
     str_1 = str_.replace(",", " ").replace(".", " ").replace("?", " ")
     list_1 = str_1.split(" ")
     best = 0
@@ -41,6 +43,7 @@ def hw2_task3(_str="abc cde def"):
     символы и все пробелы.
     Например, если было введено "abc cde def", то должно быть выведено
     "abcdef"."""
+
     _str = _str.replace(" ", "")  # Убираем пробелы в строке
     _str1 = ""
     for i in _str:  # Цикл убирающий все повторения
@@ -52,6 +55,7 @@ def hw2_task3(_str="abc cde def"):
 def hw2_task4(_str="A LOT OF problems are HERE"):
     """Посчитать количество строчных (маленьких) и прописных (больших) букв в
     введенной строке. Учитывать только английские буквы."""
+
     little = 0  # Количество маленьких букв
     big = 0  # Количество больших
     for i in _str:
@@ -67,6 +71,7 @@ def hw2_task4(_str="A LOT OF problems are HERE"):
 def hw2_task5(num=9):
     """Выведите n-ое число Фибоначчи, используя только временные переменные,
     циклические операторы и условные операторы. n - вводится"""
+
     num1, num2 = (0, 1)  # Задаём 1 и 2 число фибоначи
     i = 1
     while i < num:
@@ -81,6 +86,7 @@ def hw2_task6(number=123454321):
     справа налево одинаково). Число положительное целое, произвольной длины.
     Задача требует работать только с числами
     (без конвертации числа в строку или что-нибудь еще)"""
+
     number1 = 0
     number2 = number
     while number2 > 0:  # цикл для преобразования в обратное число
@@ -99,6 +105,7 @@ def hw2_task7(s_a=3, s_b=4, s_c=5):
     действительно ли это стороны треугольника. Если стороны определяют
     треугольник, найти его площадь.
     Если нет, вывести сообщение о неверных данных."""
+
     # Проверка, являются ли стороны треугольником
     if s_a > s_b + s_c or s_b > s_a + s_c or s_c > s_a + s_a:
         print("Это точно не треугольник")
@@ -124,6 +131,7 @@ def hw2_task8_1(h_l="1 2 -3 4 5"):
     Выходная строка должна состоять из двух чисел, разделенных
     одним пробелом,
     причем наибольшее число должно быть первым."""
+
     check = h_l.split()
     print("Максимальное число:", max(check), "Минимальное число:", min(check))
 
@@ -134,6 +142,7 @@ def hw2_task8_2(_str="worlds_run_together"):
     The first word within the output should be capitalized
     only if the original word was capitalized
     (known as Upper Camel Case, also often referred to as Pascal case)."""
+
     _list = _str.replace("-", " ").replace("_", " ")
     _list = _list.title()  # Все слова ставим с заглавной буквы
     _list = _list.split()  # Делаем список
@@ -145,6 +154,7 @@ def hw2_task8_3(_str="XOXO xoxo xoox"):
     """Check to see if a string has the same amount of 'x's and 'o's.
     The method must return a boolean and be case insensitive.
     The string can contain any char."""
+
     _x = 0  # Счётчик Х
     _o = 0  # Счётчик О
     for i in _str:
@@ -161,6 +171,7 @@ def hw2_task8_4(num1=15, num2=50):
     their sum in binary.
     The conversion can be done before, or after the addition.
     The binary number returned should be a string."""
+
     _sum = num1 + num2  # Сумма введённых данных
     _bin = ""
     while _sum > 0:  # Переводим в двоичную систему
@@ -175,6 +186,7 @@ def hw2_task8_5(_num=65):
     and returns the number of bits that are equal to one
     in the binary representation of that number.
     You can guarantee that input is non-negative."""
+
     _bin = ""
     while _num > 0:  # Переводим в двоичную систему
         _bin = str(_num % 2) + _bin
@@ -188,6 +200,7 @@ def hw3_task1(fizzbuzz=1):
      но вместо чисел, кратных 3 пишет Fizz,
      вместо чисел кратный 5 пишет Buzz,
      а вместо чисел одновременно кратных и 3 и 5 - FizzBuzz"""
+
     while fizzbuzz <= 100:
         if fizzbuzz % 3 == 0 and fizzbuzz % 5 == 0:
             print("FizzBuzz")
@@ -212,6 +225,7 @@ def hw3_task2():
     из прошлого списка и напечатайте его.
     5 Скопируйте список и добавьте в него элемент '2a'
     так чтобы в исходном списке этого элемента не было."""
+
     # 1
     lst = [lst + lst1 for lst in "ab" for lst1 in "bcd"]
     print(lst)
@@ -238,6 +252,7 @@ def hw3_task3():
     4 Создайте кортеж из одного элемента, чтобы при итерировании по этому
     элементы последовательно выводились значения 1, 2, 3. Убедитесь что len()
     исходного кортежа возвращает 1."""
+
     # 1
     lst = list("abc")
     tpl = tuple(lst)
@@ -279,6 +294,7 @@ def hw3_task5(str_="1 2 3 a b c a 3"):
     которые встречаются в списке только один раз.
     Элементы нужно выводить в том порядке,
     в котором они встречаются в списке."""
+
     lst = str_.split()  # Переводим строку в список
     if len(lst) == len(set(lst)):
         print("Данный список итак уникален!")
@@ -297,6 +313,7 @@ def hw3_task6(lst="1 2 0 0 0 3 0 4 0 0 5 0 6 7"):
      Порядок ненулевых элементов изменять нельзя, дополнительный список
      использовать нельзя, задачу нужно выполнить за один проход по списку.
      Распечатайте полученный список."""
+
     lst = lst.split()
     for i in (range(len(lst))):
         if lst[i] == "0":
@@ -309,6 +326,7 @@ def hw4_task1():
     """Создайте словарь с помощью генератора словарей,
     так чтобы его ключами были числа от 1 до 20,
     а значениями кубы этих чисел."""
+
     gen_dic = {a: a ** 3 for a in range(1, 21)}
     print(gen_dic)
 
@@ -316,6 +334,7 @@ def hw4_task1():
 def hw4_task2(cities_search=None, countries_cities=None):
     """Дан список стран и городов каждой страны. Затем даны названия городов.
     Для каждого города укажите, в какой стране он находится."""
+
     if cities_search is None:
         cities_search = ["Moscow", "Munich", "Grodno", "Odessa"]
     if countries_cities is None:
@@ -342,6 +361,7 @@ def hw4_task2(cities_search=None, countries_cities=None):
 def hw4_task3(str_one="1 2 3 4 5", str_two="4 5 6 7 8"):
     """Даны два списка чисел. Посчитайте, сколько различных чисел содержится
     одновременно как в первом списке, так и во втором."""
+
     lst_one = str_one.split()
     lst_two = str_two.split()
     set_lst = set(lst_one + lst_two)
@@ -351,6 +371,7 @@ def hw4_task3(str_one="1 2 3 4 5", str_two="4 5 6 7 8"):
 def hw4_task4(str_one="1 2 3 4 5", str_two="4 5 6 7 8"):
     """Даны два списка чисел.
     Посчитайте, сколько различных чисел входит только в один из этих списков"""
+
     lst_one = str_one.split()
     lst_two = str_two.split()
     set1 = set(lst_one)
@@ -365,6 +386,7 @@ def hw4_task5(**kwargs):
     """Каждый из N школьников некоторой школы знает Mi языков.
     Определите, какие языки знают все школьники и языки,
     которые знает хотя бы один из школьников."""
+
     if not kwargs:
         kwargs = {"first_student": ["English", "Russian", "Belarusian"],
                   "second_student": ["English", "Russian", "Belarusian",
@@ -397,6 +419,7 @@ def hw4_task6(str_input="еду, еду в чистом поле: "
     непробельных символов идущих подряд, слова разделены одним или большим
     числом пробелов или символами конца строки.
     Определите, сколько различных слов содержится в этом тексте."""
+
     # Убираем все знаки препинания на пробелы
     str_input = str_input.replace(",", " ").replace(".", " ").replace("?", " ")
     str_input = str_input.replace(":", " ").replace("-", " ").replace("!", " ")
@@ -412,6 +435,7 @@ def hw4_task6(str_input="еду, еду в чистом поле: "
 def hw4_task7(num1=120, num2=144):
     """Даны два натуральных числа. Вычислите их наибольший общий делитель
     при помощи алгоритма Евклида (мы не знаем функции и рекурсию)."""
+
     while num1 != 0 and num2 != 0:
         if num1 > num2:
             num1 = num1 % num2
