@@ -6,7 +6,6 @@
 
 
 class TooManyErrors(RuntimeError):
-
     pass
 
 
@@ -31,8 +30,8 @@ def dec(func):
 
 @dec
 def func(x):
-
     pass
+
 
 num = int(input("Введите цифру: "))
 func(num)

@@ -14,10 +14,10 @@
  get_ranges([2, 3, 8, 9]) // "2-3,8-9"""
 
 
-from Task3 import get_ranges
 from ddt import data
 from ddt import ddt
 from ddt import unpack
+from Task3 import get_ranges
 import unittest
 
 

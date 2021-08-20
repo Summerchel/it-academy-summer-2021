@@ -30,5 +30,3 @@ def get_ranges(lst):
         print(str(total[0]))
     else:
         print(str(total[0]) + "-" + str(total[-1]))
-
-
