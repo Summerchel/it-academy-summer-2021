@@ -24,22 +24,22 @@ class Tammagotchi(object):
     @property
     def mood(self):
         unhappiness = self.hunger + self.boredom
-        if unhappiness <= 10:
-            u = "прекрасно"
-        elif 10 < unhappiness <= 20:
-            u = "неплохо"
-        elif 20 < unhappiness <= 30:
-            u = "так себе"
-        elif 30 < unhappiness <= 40:
-            u = "бывало и лучше"
-        else:
-            u = "ужасно"
-        return u
+        states = {
+            10: "прекрасно",
+            20: "неплохо",
+            30: "так себе",
+            40: "бывало и лучше",
+        }
+        for state in states:
+            if unhappiness <= state:
+                mood = states[state]
+            else:
+                mood = "ужасно"
+            return mood
 
     def talk(self):
-        print("Меня зовут",
-              self.name, ", и сейчас я чувствую себя",
-              self.mood, "\n")
+        print(f"Меня зовут {self.name} и сейчас я "
+              f"чувствую себя {self.mood}" "\n")
         self.__pass_time()
 
     def eat(self):
