@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+{% block title %}
+    {{ Main }}
+{% endblock %}
+{% block content %}
+    <h1>Main</h1>
+    <p>The biggest spend {{ max_spend }} on {{ max_name }}</p>
+    {% if total %}
+    <div class="outline">
+        <h2> Spend for all time {{ total }} BYN </h2>
+    </div>
+    {% else %}
+
+    {% endif %}
+    <p></p>
+    <h3>Last 10 spending</h3>
+    {% if fields %}
+        {% for el in fields %}
+            <div class="alert alert-danger mt-2">
+                <h3> {{ el.title}}, {{ el.date }} </h3>
+                <p> {{ el.amount }} </p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p> No spends for now </p>
+    {% endif %}
+
+{% endblock %}
