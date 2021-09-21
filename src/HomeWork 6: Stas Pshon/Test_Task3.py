@@ -41,8 +41,5 @@ class TestGetRanges(unittest.TestCase):
     def test_value(self):
         with self.assertRaises(ValueError):
             get_ranges([0, 3, 2, 4, 7, 8, 10])
-            with self.assertRaises(ValueError):
-                get_ranges([0, 2, 2])
-
-
-
+        with self.assertRaises(ValueError):
+            get_ranges([0, 2, 2])
