@@ -41,4 +41,3 @@ def get_ranges(lst):
     final_str = final_str.rstrip(', ')
 
     return final_str
-
