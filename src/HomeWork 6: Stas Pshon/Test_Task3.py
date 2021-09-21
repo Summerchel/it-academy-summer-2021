@@ -24,6 +24,10 @@ class TestGetRanges(unittest.TestCase):
         self.assertEqual(get_ranges([4, 7, 10]), "4, 7, 10")
         self.assertEqual(get_ranges([2, 3, 8, 9]), "2-3, 8-9")
 
+    def test_index(self):
+        with self.assertRaises(IndexError):
+            get_ranges([])
+
     def test_type(self):
         with self.assertRaises(TypeError):
             get_ranges('1, 2, 3')
@@ -31,10 +35,6 @@ class TestGetRanges(unittest.TestCase):
             get_ranges(1)
         with self.assertRaises(TypeError):
             get_ranges({1, 2, 3})
-
-    def test_index(self):
-        with self.assertRaises(IndexError):
-            get_ranges([])
 
     def test_value(self):
         with self.assertRaises(ValueError):
