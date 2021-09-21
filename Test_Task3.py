@@ -13,7 +13,7 @@
  get_ranges([4,7,10]) // "4,7,10"
  get_ranges([2, 3, 8, 9]) // "2-3,8-9"""
 
-from Task3 import *
+from Task3 import get_ranges
 import unittest
 
 
