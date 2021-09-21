@@ -6,7 +6,7 @@
 
 
 try:
-    num = int(input("Input number: "))
+    numb = int(input("Input number: "))
 
 except ValueError:
     print("This is not a number. We leave.")
@@ -16,30 +16,44 @@ class TooManyErrors(RuntimeError):
     pass
 
 
-def dec(any_func):
-    total_count = 0
-    any_func(2)
+def dec(dec_param):
+    def decorator(any_func):
+        count = 0
 
-    def wrapper(count_num):
-
-        nonlocal total_count
-
-        for _ in range(count_num + 1):
-            total_count += 1
+        def wrapper(*args, **kwargs):
+            nonlocal count
             try:
-                if total_count > count_num:
-                    raise TooManyErrors(f'TooManyErrors. {count_num}')
+                if count < dec_param:
+                    count = count + 1
+                    return any_func(*args, **kwargs)
                 else:
-                    print(f'Done: {total_count}')
-            except TooManyErrors as err:
-                print(err)
+                    raise TooManyErrors("Permissible amount exceeded "
+                                        "program launches")
+            except TooManyErrors as errors:
+                return errors
+            except TypeError:
+                return "Data error"
+        return wrapper
+    return decorator
 
-    return wrapper
 
-
-@dec
+@dec(numb)
 def func(x):
     return x ** 2
 
 
-func(num)
+print(func(1))
+print(func(2))
+print(func(3))
+print(func(4))
+print(func(5))
+print(func(6))
+print(func(7))
+print(func(8))
+print(func(9))
+print(func(10))
+print(func(11))
+print(func(12))
+print(func(13))
+print(func(14))
+print(func(15))
