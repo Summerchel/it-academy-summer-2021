@@ -13,12 +13,10 @@
  get_ranges([4,7,10]) // "4,7,10"
  get_ranges([2, 3, 8, 9]) // "2-3,8-9"""
 
-from ddt import ddt
-from Task3 import get_ranges
+from Task3 import *
 import unittest
 
 
-@ddt
 class TestGetRanges(unittest.TestCase):
 
     def test_area(self):
@@ -41,5 +39,5 @@ class TestGetRanges(unittest.TestCase):
     def test_value(self):
         with self.assertRaises(ValueError):
             get_ranges([0, 3, 2, 4, 7, 8, 10])
-            with self.assertRaises(ValueError):
-                get_ranges([0, 2, 2])
+        with self.assertRaises(ValueError):
+            get_ranges([0, 2, 2])
