@@ -1,0 +1,44 @@
+{% extends 'main/base.html' %}
+{% block title %}
+    {{ Main }}
+{% endblock %}
+{% block content %}
+    <p></p>
+    <h1>Spends sorted by day</h1>
+    {% if spends %}
+        {% for el in spends %}
+            <div class="alert-dark">
+                <h3> {{ el.title}}, {{ el.date }}  ({{ el.cat }})</h3>
+                <p> {{ el.amount }} </p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p> No spends for now </p>
+    {% endif %}
+
+{% endblock %}
+{% block sidebar %}
+    {% if cat_date_selected == 0 %}
+        <li class="selected">Spends for all time</li>
+    {% else %}
+        <li><a href="{% url 'spends_by_date' %}">Spends for all time</a></li>
+    {% endif %}
+
+    {% if cat_date_selected == 1 %}
+        <li class="selected">sort by day</li>
+    {% else %}
+        <li><a href="{% url 'spends_by_day' %}">sort by day</a></li>
+    {% endif %}
+
+    {% if cat_date_selected == 2 %}
+        <li class="selected">sort by month</li>
+    {% else %}
+        <li><a href="{% url 'spends_by_month' %}">sort by month</a></li>
+    {% endif %}
+
+    {% if cat_date_selected == 3 %}
+        <li class="selected">sort by year</li>
+    {% else %}
+        <li><a href="{% url 'spends_by_year' %}">sort by year</a></li>
+    {% endif %}
+{% endblock %}

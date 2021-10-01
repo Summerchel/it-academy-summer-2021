@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+{% block title %}
+    Spend by category
+{% endblock %}
+{% block content %}
+    <h1>Here will be diagrams about your spends</h1>
+
+    {% for el in diagram %}
+            <h3> {{ el }} </h3>
+    {% endfor %}
+    {{ lst_spends }}
+    {% for i in select_cat %}
+            <h3> {{ i.name}},{{ el.amount__sum}}</h3>
+    {% endfor %}
+
+
+{% endblock %}

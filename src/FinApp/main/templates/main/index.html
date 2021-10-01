@@ -3,21 +3,19 @@
     {{ Main }}
 {% endblock %}
 {% block content %}
-    <h1>Main</h1>
-    <p>The biggest spend {{ max_spend }} on {{ max_name }}</p>
+    <h1>Spends sorted by addition</h1>
     {% if total %}
     <div class="outline">
-        <h2> Spend for all time {{ total }} BYN </h2>
+        <h2> Spends for all time {{ total }} BYN </h2>
     </div>
     {% else %}
 
     {% endif %}
     <p></p>
-    <h3>Last 10 spending</h3>
-    {% if fields %}
-        {% for el in fields %}
-            <div class="alert alert-danger mt-2">
-                <h3> {{ el.title}}, {{ el.date }} </h3>
+    {% if spends %}
+        {% for el in spends %}
+            <div class="alert-dark">
+                <h3> {{ el.title}}, {{ el.date }} ({{ el.cat }})</h3>
                 <p> {{ el.amount }} </p>
             </div>
         {% endfor %}
@@ -25,4 +23,20 @@
         <p> No spends for now </p>
     {% endif %}
 
+{% endblock %}
+
+{% block sidebar %}
+{% if cat_selected == 0 %}
+    <li class="selected">All spend categories</li>
+{% else %}
+    <li><a href="{% url 'home' %}">All spend categories</a></li>
+{% endif %}
+
+{% for c in cats %}
+    {% if c.pk == cat_selected %}
+        <li class="selected">{{ c.name }}</li>
+    {% else %}
+        <li><a href="{{ c.get_absolute_url }}">{{ c.name }}</a></li>
+    {% endif %}
+{% endfor %}
 {% endblock %}
